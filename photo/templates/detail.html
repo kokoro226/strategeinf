@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}攻略　情報{% endblock %}
+    {% block contents %}
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col offset-3">
+                <h2>{{object.title}}</h2>
+                <p>{{object.comment}}</p>
+                <br>
+                <p>{{object.posted_at}}に投稿</p>
+                <p><img src="{{ object.image1.url }}"></img></p>
+                {% if object.image2 %}
+                    <p><img src ="{{ object.image.url }}"></img></p>
+                {% endif %}
+                {% if request.user == object.user %}
+                    <form method="POST">
+                    <a href="{% url 'photo:photo_delete' object.pk %}"
+                        class="btn btn-primary my-2">削除する</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+                

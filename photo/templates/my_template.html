@@ -1,0 +1,18 @@
+<!-- my_template.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Media Page</title>
+</head>
+<body>
+    <!-- 画像の表示 -->
+    <img src="{{ http://www.w3.org/2000/svg }}" alt="Image">
+
+    <!-- 動画の表示 -->
+    <video width="320" height="240" controls>
+        <source src="{{ my_model_instance.video.url }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</body>
+</html>

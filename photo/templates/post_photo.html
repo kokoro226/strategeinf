@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}Post{% endblock %}
+    
+    {% block contents %}
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col offset-2">
+                <form method="POST"
+                        enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <table>
+                        <tr>
+                         <th>カテゴリー</th>
+                         <td>{{ form.category }}</td>
+                        </tr>
+                        <tr>
+                         <th>タイトル</th>
+                         <td>{{ form.title }}</td>
+                        </tr>
+                        <tr>
+                         <th>コメント</th>
+                         <td>{{ form.comment }}</td>
+                        </tr>
+                        <tr>
+                         <th>画像１</th>
+                         <td>{{ form.image1 }}</td>
+                        </tr>
+                        <tr>
+                         <th>画像２</th>
+                         <td>{{ form.image2 }}</td>
+                        </tr>
+                    </table>
+                    <hr>
+                    <button type="submit">投稿する</button>
+                </form>
+                </dv>
+            </dv>
+        </dv>
+        {% endblock %}
+                                                       
+                        
